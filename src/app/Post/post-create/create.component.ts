@@ -2,15 +2,18 @@
 // to get the decorector feature '@'
 import {Component} from '@angular/core';
 
-@Component({
-
+@ Component({
   selector: 'app-post-create',
-
-  templateUrl: './post-create/create.component.html'
-
+  templateUrl: 'create.component.html'
 })
 
-export class PostCreateComp {
+export class PostCreateComponent {
+// tslint => ':string' is redundant
+  newString = '';
 
+  onAddNewPost(): void {
+    this.newString = 'Add new Post success';
+
+  }
 }
 

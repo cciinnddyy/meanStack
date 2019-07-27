@@ -4,9 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// Let the typescript know where the file is
+import {PostCreateComponent} from './Post/post-create/create.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
