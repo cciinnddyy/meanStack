@@ -1,6 +1,9 @@
 
-<textarea rows="6" [(ngModel)]="entryString"></textarea>
+<label for="name-step">Name: </label><input type="text" name="name-step" [(ngModel)]="entryname"/>
+<label for="mac=step">Mac Address</label><input type="text" name="mac-step" [(ngModel)]="entrymac"/>
 <hr>
 <button (click)='onAddNewPost()'>Save the Post</button>
 <hr>>
 <p>{{newString}}</p>
+
+

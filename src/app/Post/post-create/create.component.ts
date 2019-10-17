@@ -8,14 +8,16 @@ import {Component} from '@angular/core';
 })
 
 export class PostCreateComponent {
+// call api in this class?
 // tslint => ':string' is redundant
   newString = 'No comment';
-  entryString = '';
-
+  entryname = '';
+  entrymac = '';
   onAddNewPost(): void {
 
     // this.newString = 'Add new Post success';
-    this.newString = this.entryString;
+    this.newString = this.entryname;
+
   }
 }
 
@@ -23,6 +25,9 @@ export class PostCreateComponent {
 // <p>{{field value output simple string}}</p>
 // (event) = "handler"
 
-// #postString, onAddNewPost(postString)
+// #postString, onAddNewPost(postString), postString is an HTML input element
+
 // [(ngModel)] = 'entryString'
+
+// angular/material add two new dependency in the package.json
 
