@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 // Let the typescript know where the file is
 import {PostCreateComponent} from './Post/post-create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {weekStepComponent} from './Step/weekStep.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    weekStepComponent
   ],
   imports: [
     BrowserModule,
