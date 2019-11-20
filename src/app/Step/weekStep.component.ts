@@ -19,6 +19,7 @@ export class weekStepComponent {
   entryname = '';
   entrymac = '';
   username = 'cindy';
+  stepmodels: stepsModel[];
 
   onAddNewPost(): void {
    // this.newString = 'Add new Post success';
@@ -29,7 +30,8 @@ export class weekStepComponent {
 
   }
   getweekSteps(username): void {
-    this.stepservice.getWeeklySteps(username).
+    this.stepmodels = this.stepservice.getWeeklySteps(username);
+
     //get data using web api
 
 
