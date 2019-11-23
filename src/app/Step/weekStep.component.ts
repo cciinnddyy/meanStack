@@ -29,8 +29,14 @@ export class weekStepComponent {
   constructor(private stepservice: StepService) {
 
   }
-  getweekSteps(username): void {
-    this.stepmodels = this.stepservice.getWeeklySteps(username);
+
+  getweekSteps(): void {
+    this.stepservice.getweeklysteps(this.username).then((value) => {
+      console.log('Hello ' + value);
+      // this.stepmodels = value;
+    }).catch((err) => {
+      console.log(err);
+    });
 
     //get data using web api
 
