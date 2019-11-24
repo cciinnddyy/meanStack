@@ -40,18 +40,19 @@ getweeklysteps(username: string) {
   var ProMise = new Promise<stepsModel[]>((resolve, reject) => {
     Axios.post(`http://localhost:3000/step/weekly`, {name: username}).then((res) => {
     console.log(res.data);
+    let ListofSteps: Array<stepsModel> = [];
     //var listofSteps: [];
     if (res.data.length > 0) {
-      var listofSteps: stepsModel[];
+
       for (let i = 0; i < res.data.length; i++) {
         const stepinstance = new stepsModel(res.data[i].username ,
           res.data[i].macAddress, res.data[i].steps, res.data[i].calories);
 
 
-          listofSteps.push(stepinstance);
+          ListofSteps.push(stepinstance);
         }
-        console.log(listofSteps[0]);
-    resolve(listofSteps);
+        console.log(ListofSteps[0]);
+    resolve(ListofSteps);
   }
 })
 
