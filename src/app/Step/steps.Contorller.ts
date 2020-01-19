@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {stepsModel} from './steps.Model';
 
 import Axios from 'axios';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,8 @@ getweeklysteps(username: string) {
 } )
 return ProMise;
 }
+
+
 // tslint:disable-next-line: align
 
 // stepService
