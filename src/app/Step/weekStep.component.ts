@@ -7,7 +7,7 @@ import {StepService} from './steps.Contorller';
 @Component({
   selector: 'app-step-show',
   templateUrl: 'weekStep.component.html',
-  providers:[StepService]
+  providers: [StepService]
 })
 
 export class weekStepComponent {
@@ -19,20 +19,25 @@ export class weekStepComponent {
   entryname = '';
   entrymac = '';
   username = 'cindy';
-  stepmodels: stepsModel[];
-
+  stepmodels: Array<stepsModel> = [];
   onAddNewPost(): void {
    // this.newString = 'Add new Post success';
     this.newString = this.entryname;
   }
 
   constructor(private stepservice: StepService) {
-
+    //let stepModel = this.stepmodels
   }
 
   getweekSteps(): void {
     this.stepservice.getweeklysteps(this.username).then((value) => {
-      console.log('Hello ' + value);
+      console.log(this.username);
+      //let stepsmodel = this.stepmodels;
+      this.stepmodels = value;
+      this.stepmodels.forEach((instance) => {
+        console.log(instance);
+      })
+      // console.log('Hello ');
       // this.stepmodels = value;
     }).catch((err) => {
       console.log(err);

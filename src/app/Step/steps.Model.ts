@@ -5,6 +5,7 @@ export class stepsModel {
     this.macAddress = macAddress;
     this.steps = steps;
     this.weekGoal = weekGoal;
+    this.calories = calories;
   }
 
   username: string;

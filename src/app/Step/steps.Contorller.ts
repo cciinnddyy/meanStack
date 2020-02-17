@@ -15,25 +15,6 @@ constructor() {
 }
 listofsteps: stepsModel[];
 
-async getWeeklySteps(username: string) {
-// how to build a Promise
-
-await Axios.post(`http://localhost:3000/step/weekly`, {name: username}).then(res => {
-  if (res.data.length > 0) {
-    for (let i = 0; i < res.data.length; i++) {
-        var stepinstance = new stepsModel(res.data[i].username ,
-          res.data[i].macAddress, res.data[i].steps, res.data[i].calories);
-          this.listofsteps.push(stepinstance);
-
-    }
-  }
-
-  // return this.listofsteps;
-  // foreach
-});
-
-
-}
 
 getweeklysteps(username: string) {
 
@@ -48,13 +29,14 @@ getweeklysteps(username: string) {
       for (let i = 0; i < res.data.length; i++) {
         const stepinstance = new stepsModel(res.data[i].username ,
           res.data[i].macAddress, res.data[i].steps, res.data[i].calories);
-
+          if(stepinstance.steps>0){
 
           ListofSteps.push(stepinstance);
         }
-        console.log(ListofSteps[0]);
+        }
     resolve(ListofSteps);
   }
+  else
 })
 
 } )

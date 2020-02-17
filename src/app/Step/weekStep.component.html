@@ -2,5 +2,15 @@
 
 <div class='container-fluid'>
   <h1>Weekly Step</h1>
-
+<ul class='list-group'>
+  <li class="list-group-item" *ngFor= 'let stepsm of stepmodels'>
+    <div class="row">
+      <label class="col-md-4">{{stepsm.username}}</label>
+      <label class="col-md-4">{{stepsm.steps}}</label>
+      <label class="col-md-4">{{stepsm.calories}}</label>
+    </div>
+  </li>
+</ul>
+<label>Username: </label> <input type="text" [(ngModel)]="username"/>
+<button class="btn btn-primary" (click)="getweekSteps()">Get Steps Data</button>
 </div>
